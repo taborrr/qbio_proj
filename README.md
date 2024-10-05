@@ -7,7 +7,7 @@
 This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize the phage genome alignments using **Minimap2** and **Progressive Mauve**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages.
 
 ## Reference Phage Genomes
-We will align the following three reference phage genomes:
+We will use these three reference phage genomes for alignment:
 
 1. **Escherichia phage vB_EcoM Hdk5** (Accession no: MK373780.1)  
    [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/MK373780.1?report=fasta)
@@ -19,7 +19,7 @@ We will align the following three reference phage genomes:
    [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OP555981.1?report=fasta)
 
 ## Phage Genomes for Alignment
-We will align the following seven phage genomes from three genera against the reference genomes:
+We will align the following seven phage genomes from three genera to their respective reference genome:
 
 1. **Escherichia phage vB_EcoM_3A1_SA_NWU**, complete genome  
    [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062524.1?report=fasta)
@@ -49,7 +49,7 @@ We will use the following tools for genome alignments and visualizations:
 - **[CIRCOS](http://circos.ca/)** (for potential visualization in circular genome plots).
 
 ## Primary Goal
-- **Modernize the genome alignment of seven phage genomes** to the three reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*) from different genera. Align the seven phages to each reference individually to assess how well each phage genome aligns across genera.  
+- **Modernize the genome alignment** of seven phage genomes to the three reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*) from different genera. Align the seven phages to each reference individually to assess how well each phage genome aligns across genera.  
 - **Create a fourth alignment plot** comparing how the three reference genomes align to each other.  
 - **Visualize the results** by creating Progressive Mauve Alignment plots for each alignment.
 
@@ -62,15 +62,15 @@ To set up the environment for the project:
 
 1. **Create a working directory with a subfolder**:
    ```bash
-   mkdir ~/virus-wgs
-   cd ~/virus-wgs
+   mkdir ~/virus
+   cd ~/virus
    mkdir genomes
    ```
 
 2. **Create a conda environment for Minimap2**:
    ```bash
-   conda create --name virus-wgs python=3.8 minimap2 -c bioconda
-   conda activate virus-wgs
+   conda create --name wgs_align python=3.8 minimap2 -c bioconda
+   conda activate wgs_align
    ```
 
    Alternatively, download and extract Minimap2:
