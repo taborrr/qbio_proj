@@ -1,4 +1,4 @@
-# Recreation of Escherichia coli O177-infecting Phage Genome Alignments Figure
+# Recreation of *Escherichia coli* O177-infecting Phage Genome Alignments Figure
 ### Authors: Izabella and Tabor
 ## Project Overview
 This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize the phage genome alignments using **Minimap2** and **Progressive Mauve**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages.
@@ -52,26 +52,27 @@ We will use the following tools for genome alignments and visualizations:
 
 ## Secondary Goals
 - **Develop an interactive dashboard**: Create an online dashboard similar to [this Dash alignment chart](https://dash.gallery/dash-alignment-chart/), where users can hover over genome alignments to view detailed information such as genome positions and mapping quality.
-- **Explore visualization using CIRCOS plots**: Represent the genome alignments visually in a circular plot to showcase alignment relationships between the genomes.
+- **Explore visualization using CIRCOS plots**: Represent the genome alignments in a circular plot to determine alignment relationships between the genomes with a different perspective.
 
 ## Project Setup
 To set up the environment for the project:
 
-1. **Create a new working directory**:
+1. **Create a working directory with a subfolder**:
    ```bash
    mkdir ~/virus-wgs
    cd ~/virus-wgs
+   mkdir genomes
    ```
 
-2. **Download and extract Minimap2**:
-   ```bash
-   curl -L https://github.com/lh3/minimap2/releases/download/v2.28/minimap2-2.28_x64-linux.tar.bz2 | tar -jxvf -
-   ```
-
-   Alternatively, create a Conda environment:
+2. **Create a conda environment for Minimap2**:
    ```bash
    conda create --name virus-wgs python=3.8 minimap2 -c bioconda
    conda activate virus-wgs
+   ```
+
+   Alternatively, download and extract Minimap2:
+   ```bash
+   curl -L https://github.com/lh3/minimap2/releases/download/v2.28/minimap2-2.28_x64-linux.tar.bz2 | tar -jxvf -
    ```
 
 ## Next Steps
