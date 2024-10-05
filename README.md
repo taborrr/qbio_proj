@@ -1,5 +1,8 @@
 # Recreation of *Escherichia coli* O177-infecting Phage Genome Alignments Figure
-### Authors: Izabella and Tabor
+#### Authors: Izabella and Tabor
+
+![Genome Alignments Figure](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-023-48788-w/MediaObjects/41598_2023_48788_Fig5_HTML.png?as=webp)
+
 ## Project Overview
 This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize the phage genome alignments using **Minimap2** and **Progressive Mauve**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages.
 
