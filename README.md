@@ -69,8 +69,10 @@ To set up the environment for the project:
 
 2. **Create a conda environment for Minimap2**:
    ```bash
-   conda create --name wgs_align python=3.8 -c conda-forge minimap2 -c bioconda
-   conda activate wgs_align
+      conda create -n wgs_align -y && \
+      conda activate wgs_align && \
+      conda config --env --add channels bioconda && \
+      conda install -y python=3.8 bioconda::minimap2
    ```
 
    Alternatively, download and extract Minimap2:
