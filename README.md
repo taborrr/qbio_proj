@@ -69,7 +69,7 @@ To set up the environment for the project:
 
 2. **Create a conda environment for Minimap2**:
    ```bash
-   conda create --name wgs_align python=3.8 minimap2 -c bioconda
+   conda create --name wgs_align python=3.8 -c conda-forge minimap2 -c bioconda
    conda activate wgs_align
    ```
 
@@ -79,7 +79,7 @@ To set up the environment for the project:
    ```
 
 ## Next Steps
-1. Download the reference and query phage genomes.
+1. Download the reference and query phage genomes to the subfolder.
 2. Perform genome alignments using Minimap2.
 3. Visualize the alignments with Progressive Mauve and/or CIRCOS.
 
