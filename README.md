@@ -4,7 +4,7 @@
 ![Genome Alignments Figure](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-023-48788-w/MediaObjects/41598_2023_48788_Fig5_HTML.png?as=webp)
 
 ## Project Overview
-This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize the phage genome alignments using **Minimap2** and **Progressive Mauve**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages.
+This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize the phage genome alignments using **NUCmer** and **Progressive Mauve**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages.
 
 ## Reference Phage Genomes
 We will use these three reference phage genomes for alignment:
@@ -44,7 +44,7 @@ We will align the following seven phage genomes from three genera to their respe
 
 ## Tools and Software
 We will use the following tools for genome alignments and visualizations:
-- **[Minimap2](https://github.com/lh3/minimap2)**: A fast genome alignment tool.
+- **[NUCmer](https://mummer.sourceforge.net/manual/#nucmer)**: A fast genome alignment tool.
 - **[Progressive Mauve](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0011147)**: Software for visualizing multiple genome alignments.
 - **[CIRCOS](http://circos.ca/)** (for potential visualization in circular genome plots).
 
@@ -65,9 +65,11 @@ To set up the environment for the project:
    mkdir ~/virus
    cd ~/virus
    mkdir genomes
+   mkdir comparisons
+   mkdir scripts
    ```
 
-2. **Create a conda environment for Minimap2**:
+2. **Create a conda environment for NUCmer**:
    ```bash
       conda create -n wgs_align -y && \
       conda activate wgs_align && \
@@ -75,9 +77,10 @@ To set up the environment for the project:
       conda install -y python=3.8 bioconda::mummer
    ```
 
-   Alternatively, download and extract Minimap2:
+   For more MUMmer and NUCmer info, go to the man and git pages:
    ```bash
-   curl -L https://github.com/lh3/minimap2/releases/download/v2.28/minimap2-2.28_x64-linux.tar.bz2 | tar -jxvf -
+   https://mummer.sourceforge.net/manual/#nucmer
+   https://github.com/mummer4/mummer/tree/master?tab=readme-ov-file
    ```
 
 ## Next Steps
