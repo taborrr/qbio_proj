@@ -72,7 +72,7 @@ To set up the environment for the project:
       conda create -n wgs_align -y && \
       conda activate wgs_align && \
       conda config --env --add channels bioconda && \
-      conda install -y python=3.8 bioconda::minimap2
+      conda install -y python=3.8 bioconda::mummer
    ```
 
    Alternatively, download and extract Minimap2:
