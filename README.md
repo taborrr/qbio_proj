@@ -69,12 +69,10 @@ To set up the environment for the project:
    mkdir scripts
    ```
 
-2. **Create a conda environment for MiniMap2**:
+2. **Easily download MiniMap2 folder in Terminal**:
    ```bash
-      conda create -n wgs_align -y && \
-      conda activate wgs_align && \
-      conda config --env --add channels bioconda && \
-      conda install -y python=3.8 bioconda::minimap2
+      cd scripts
+      git clone https://github.com/lh3/minimap2.git
    ```
 
    For more MiniMap2 info, go to the manual:
