@@ -4,7 +4,7 @@
 ![Genome Alignments Figure](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-023-48788-w/MediaObjects/41598_2023_48788_Fig5_HTML.png?as=webp)
 
 ## Project Overview
-This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize the phage genome alignments using **NUCmer** and **Progressive Mauve**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages.
+This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize the phage genome alignments using **MiniMap2** and **ggplot2**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages.
 
 ## Reference Phage Genomes
 We will use these three reference phage genomes for alignment:
@@ -44,14 +44,14 @@ We will align the following seven phage genomes from three genera to their respe
 
 ## Tools and Software
 We will use the following tools for genome alignments and visualizations:
-- **[NUCmer](https://mummer.sourceforge.net/manual/#nucmer)**: A fast genome alignment tool.
-- **[Progressive Mauve](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0011147)**: Software for visualizing multiple genome alignments.
+- **[MiniMap2](https://github.com/lh3/minimap2)**: A fast genome alignment tool.
+- **[ggplot2](https://ggplot2.tidyverse.org)**: R package for creating graphics.
 - **[CIRCOS](http://circos.ca/)** (for potential visualization in circular genome plots).
 
 ## Primary Goal
 - **Modernize the genome alignment** of seven phage genomes to the three reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*) from different genera. Align the seven phages to each reference individually to assess how well each phage genome aligns across genera.  
 - **Create a fourth alignment plot** comparing how the three reference genomes align to each other.  
-- **Visualize the results** by creating Progressive Mauve Alignment plots for each alignment.
+- **Visualize the results** by creating alignment plots.
 
 ## Secondary Goals
 - **Develop an interactive dashboard**: Create an online dashboard similar to [this Dash alignment chart](https://dash.gallery/dash-alignment-chart/), where users can hover over genome alignments to view detailed information such as genome positions and mapping quality.
@@ -69,22 +69,22 @@ To set up the environment for the project:
    mkdir scripts
    ```
 
-2. **Create a conda environment for NUCmer**:
+2. **Create a conda environment for MiniMap2**:
    ```bash
       conda create -n wgs_align -y && \
       conda activate wgs_align && \
       conda config --env --add channels bioconda && \
-      conda install -y python=3.8 bioconda::mummer
+      conda install -y python=3.8 bioconda::minimap2
    ```
 
-   For more MUMmer and NUCmer info, go to the man and git pages:
+   For more MiniMap2 info, go to the manual:
    ```bash
-   https://mummer.sourceforge.net/manual/#nucmer
-   https://github.com/mummer4/mummer/tree/master?tab=readme-ov-file
+   https://lh3.github.io/minimap2/minimap2.html
    ```
 
 ## Next Steps
 1. Download the reference and query phage genomes to the subfolder.
 2. Perform genome alignments using Minimap2.
-3. Visualize the alignments with Progressive Mauve and/or CIRCOS.
+3. Visualize the alignments within R using ggplot.
+4. Consider potential to use Plotly-Dash
 
