@@ -4,10 +4,19 @@
 ![Genome Alignments Figure](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-023-48788-w/MediaObjects/41598_2023_48788_Fig5_HTML.png?as=webp)
 
 ## Project Overview
-This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize the phage genome alignments using **MiniMap2** and **ggplot2**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages.
+This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize phage genome alignments using **MiniMap2** and **ggplot2**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages, in order to redetermine which genera these 7 new phages belong.  
+
+Viruses
+└── Duplodnaviria
+    └── Heunggongvirae
+        └── Uroviricota
+            └── Caudoviricetes
+                ├── Phapecoctavirus?
+                ├── Tequatrovirus?
+                └── Vequintavirus?
 
 ## Reference Phage Genomes
-We will use these three reference phage genomes for alignment:
+We will use three phage reference genomes as genera represenatives for alignment:
 
 1. **Escherichia phage vB_EcoM Hdk5** (Accession no: MK373780.1)  
    [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/MK373780.1?report=fasta)
@@ -19,7 +28,7 @@ We will use these three reference phage genomes for alignment:
    [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OP555981.1?report=fasta)
 
 ## Phage Genomes for Alignment
-We will align the following seven phage genomes from three genera to their respective reference genome:
+We will align seven new phage genomes to each representative genera reference genome:
 
 1. **Escherichia phage vB_EcoM_3A1_SA_NWU**, complete genome  
    [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062524.1?report=fasta)
@@ -49,7 +58,7 @@ We will use the following tools for genome alignments and visualizations:
 - **[CIRCOS](http://circos.ca/)** (for potential visualization in circular genome plots).
 
 ## Primary Goal
-- **Modernize the genome alignment** of seven phage genomes to the three reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*) from different genera. Align the seven phages to each reference individually to assess how well each phage genome aligns across genera.  
+- **Modernize the genome alignment** of seven phage genomes to the three genera reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*). Aligning with **MiniMap2** in `bash ` and plotting with **ggplot2** in `R`. Align the seven phages to each reference individually to assess how well each new phage genome aligns across genera.  
 - **Create a fourth alignment plot** comparing how the three reference genomes align to each other.  
 - **Visualize the results** by creating alignment plots.
 
@@ -85,4 +94,3 @@ To set up the environment for the project:
 2. Perform genome alignments using Minimap2.
 3. Visualize the alignments within R using ggplot.
 4. Consider potential to use Plotly-Dash
-
