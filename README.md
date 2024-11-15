@@ -12,10 +12,34 @@ Viruses
     └── Heunggongvirae
         └── Uroviricota
             └── Caudoviricetes
-                ├── Phapecoctavirus
-                ├── Tequatrovirus
-                └── Vequintavirus
+                └── Caudovirales
+                    └── Myoviridae
+                        ├── Stephanstirmvirinae
+                        │   └── Phapecoctavirus
+                        │       ├── Escherichia phage vB_EcoM Hdk5 (MK373780.1)
+                        │       └── [Potential Species Placement]
+                        ├── Tevenvirinae
+                        │   └── Tequatrovirus
+                        │       ├── Escherichia phage vB_EcoM_Schickermooser (NC_048196.1)
+                        │       └── [Potential Species Placement]
+                        └── Vequintavirinae
+                            └── Vequintavirus
+                    |           ├── Escherichia phage vB_EcoM UFV10 (OP555981.1)
+                    Class  |    └── [Potential Species Placement]
+                           Genera
 ```
+Viruses
+└── Duplodnaviria
+    └── Heunggongvirae
+        └── Uroviricota
+            └── Caudoviricetes
+                ├── Phapecoctavirus
+                │   └── [Species Placeholder]
+                ├── Tequatrovirus
+                │   └── [Species Placeholder]
+                └── Vequintavirus
+                    └── [Species Placeholder]
+
 
 
 ## Reference Phage Genomes
