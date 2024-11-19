@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# need to be in a conda environment with minimap2 installed for this to work, made wgs_align for this
+
 # set variable for reference genome and index of it (so can be changed later)
-REFERENCE_GENOME_MK="MK373780_1.fasta"
+REFERENCE_GENOME_MK="genomes/MK373780_1.fasta"
 REFERENCE_INDEX_MK="reference_genome_mk.mmi"
 
 # index the reference genome 
@@ -25,4 +27,5 @@ for PHAGE_GENOME in "${GENOMES[@]}"; do
 
     echo "Alignment of $PHAGE_GENOME complete. Output: $OUTPUT_DIR/$BASENAME.paf"
 done
+
 
