@@ -105,7 +105,6 @@ We will use the following tools for genome alignments and visualizations:
    chmod +x minimapper.sh
    ./minimapper.sh
    ```
-      (don't worry about overwriting the downloaded paf_output files)
 
 4. **Visualize the alignments in RStudio**
 - Open `plot.R` in RStudio
