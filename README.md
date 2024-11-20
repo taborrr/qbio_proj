@@ -26,8 +26,8 @@ This project aims to reanalyze genome alignment data from figure 5 of the 2023 p
                 |            └── Vequintavirus
                 |                ├── Escherichia phage vB_EcoM UFV10 (OP555981.1)
                Class             └── [Potential Species Placement]
-                                |
-                               Genera
+                                 |
+                                Genera
 ```
 
 
