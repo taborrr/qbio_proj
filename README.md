@@ -87,6 +87,7 @@ We will use the following tools for genome alignments and visualizations:
 1. **Clone the repo virus-wgs-comparison**:
    ```bash
    git clone https://github.com/taborrr/virus-wgs-comparison.git
+   cd virus-wgs-comparison
    ```
 
 2. **Create MiniMap2 conda environment**:
@@ -104,7 +105,7 @@ We will use the following tools for genome alignments and visualizations:
    chmod +x minimapper.sh
    ./minimapper.sh
    ```
-#### don't worry about overwriting the current paf_output files
+      (don't worry about overwriting the downloaded paf_output files)
 
 4. **Visualize the alignments in RStudio**
 - Open `plot.R` in RStudio
