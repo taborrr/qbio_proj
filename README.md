@@ -75,7 +75,7 @@ We will use the following tools for genome alignments and visualizations:
 - **[CIRCOS](http://circos.ca/)** (for potential visualization in circular genome plots).
 
 ## Primary Goal
-- **Modernize the genome alignment plot** of seven phage genomes to the three genera reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*). Aligning with **MiniMap2** in `bash ` and plotting with **ggplot2** in `R`. Align the seven phages to each reference individually to assess how well each new phage genome aligns across genera.  
+- **Modernize the genome alignment plot** of seven phage genomes to the three genera reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*). Aligning with **MiniMap2** in `bash` and plotting with **ggplot2** in `R`. Align the seven phages to each reference individually to assess how well each new phage genome aligns across genera.  
 - **Create a fourth alignment plot** Recapitualting the genera divergence by aligning the three reference genomes to each other.  
 
 ## Secondary Goals
