@@ -13,20 +13,21 @@ This project aims to reanalyze genome alignment data from figure 5 of the 2023 p
         └── Uroviricota
             └── Caudoviricetes
                 └── Caudovirales
-                    └── Myoviridae
-                        ├── Stephanstirmvirinae
-                        │   └── Phapecoctavirus
-                        │       ├── Escherichia phage vB_EcoM Hdk5 (MK373780.1)
-                        │       └── [Potential Species Placement]
-                        ├── Tevenvirinae
-                        │   └── Tequatrovirus
-                        │       ├── Escherichia phage vB_EcoM_Schickermooser (NC_048196.1)
-                        │       └── [Potential Species Placement]
-                        └── Vequintavirinae
-                            └── Vequintavirus
-               |                ├── Escherichia phage vB_EcoM UFV10 (OP555981.1)
-               Class       |    └── [Potential Species Placement]
-                           Genera
+                |    └── Myoviridae
+                |        ├── Stephanstirmvirinae
+                |        │   └── Phapecoctavirus
+                |        │       ├── Escherichia phage vB_EcoM Hdk5 (MK373780.1)
+                |        │       └── [Potential Species Placement]
+                |        ├── Tevenvirinae
+                |        │   └── Tequatrovirus
+                |        │       ├── Escherichia phage vB_EcoM_Schickermooser (NC_048196.1)
+                |        │       └── [Potential Species Placement]
+                |        └── Vequintavirinae
+                |            └── Vequintavirus
+                |                ├── Escherichia phage vB_EcoM UFV10 (OP555981.1)
+               Class             └── [Potential Species Placement]
+                                |
+                               Genera
 ```
 
 
