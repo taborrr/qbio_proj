@@ -7,7 +7,7 @@
 This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize phage genome alignments using **MiniMap2** and **ggplot2**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages, in order to redetermine which genera these 7 new phages belong.  
 
 ```bash
-Viruses
+ Viruses
 └── Duplodnaviria
     └── Heunggongvirae
         └── Uroviricota
@@ -24,21 +24,10 @@ Viruses
                         │       └── [Potential Species Placement]
                         └── Vequintavirinae
                             └── Vequintavirus
-                    |           ├── Escherichia phage vB_EcoM UFV10 (OP555981.1)
-                    Class  |    └── [Potential Species Placement]
+               |                ├── Escherichia phage vB_EcoM UFV10 (OP555981.1)
+               Class       |    └── [Potential Species Placement]
                            Genera
 ```
-Viruses
-└── Duplodnaviria
-    └── Heunggongvirae
-        └── Uroviricota
-            └── Caudoviricetes
-                ├── Phapecoctavirus
-                │   └── [Species Placeholder]
-                ├── Tequatrovirus
-                │   └── [Species Placeholder]
-                └── Vequintavirus
-                    └── [Species Placeholder]
 
 
 
@@ -85,16 +74,14 @@ We will use the following tools for genome alignments and visualizations:
 - **[CIRCOS](http://circos.ca/)** (for potential visualization in circular genome plots).
 
 ## Primary Goal
-- **Modernize the genome alignment** of seven phage genomes to the three genera reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*). Aligning with **MiniMap2** in `bash ` and plotting with **ggplot2** in `R`. Align the seven phages to each reference individually to assess how well each new phage genome aligns across genera.  
-- **Create a fourth alignment plot** comparing how the three reference genomes align to each other.  
-- **Visualize the results** by creating alignment plots.
+- **Modernize the genome alignment plot** of seven phage genomes to the three genera reference genomes (*vB_EcoM Hdk5*, *vB_EcoM Schickermooser*, and *vB_EcoM UFV10*). Aligning with **MiniMap2** in `bash ` and plotting with **ggplot2** in `R`. Align the seven phages to each reference individually to assess how well each new phage genome aligns across genera.  
+- **Create a fourth alignment plot** Recapitualting the genera divergence by aligning the three reference genomes to each other.  
 
 ## Secondary Goals
 - **Develop an interactive dashboard**: Create an online dashboard similar to [this Dash alignment chart](https://dash.gallery/dash-alignment-chart/), where users can hover over genome alignments to view detailed information such as genome positions and mapping quality.
 - **Explore visualization using CIRCOS plots**: Represent the genome alignments in a circular plot to determine alignment relationships between the genomes with a different perspective.
 
-## Project Setup
-To set up the environment for the project:
+## DIY:
 
 1. **Clone the repo virus-wgs-comparison**:
    ```bash
