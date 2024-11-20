@@ -96,28 +96,31 @@ We will use the following tools for genome alignments and visualizations:
 ## Project Setup
 To set up the environment for the project:
 
-1. **Create a working directory with a subfolder**:
+1. **Clone the repo virus-wgs-comparison**:
    ```bash
-   mkdir ~/virus
-   cd ~/virus
-   mkdir genomes
-   mkdir comparisons
-   mkdir scripts
+   git clone https://github.com/taborrr/virus-wgs-comparison.git
    ```
 
-2. **Easily download MiniMap2 folder in Terminal**:
+2. **Create MiniMap2 conda environment**:
    ```bash
-      cd scripts
-      git clone https://github.com/lh3/minimap2.git
+      conda create -n wgs_align -y
+      conda activate wgs_align
+      conda config --env --add channels bioconda
+      conda install -y bioconda::minimap2
    ```
+[This is the manual for MiniMap2](https://lh3.github.io/minimap2/minimap2.html)
 
-   For more MiniMap2 info, go to the manual:
+3. **Perform genome alignments for one reference to the seven new phages**:
    ```bash
-   https://lh3.github.io/minimap2/minimap2.html
+   cd scripts
+   chmod +x minimapper.sh
+   ./minimapper.sh
    ```
+#### don't worry about overwriting the current paf_output files
+
+4. **Visualize the alignments in RStudio**
+- Open `plot.R` in RStudio
+- Run each line
 
 ## Next Steps
-1. Download the reference and query phage genomes to the subfolder.
-2. Perform genome alignments using Minimap2.
-3. Visualize the alignments within R using ggplot.
-4. Consider potential to use Plotly-Dash
+5. Consider potential to use Plotly-Dash
