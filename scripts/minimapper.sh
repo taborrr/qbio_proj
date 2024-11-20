@@ -1,18 +1,16 @@
 #!/bin/bash
 
-# Path to the folder with genome FASTA files
-genome_dir="/virus-wgs-comparison/genomes/"
-output_dir="/virus-wgs-comparison/comparisons/"
+# Set variables
+REFERENCE_GENOME="genomes/MK373780_1.fasta"
+REFERENCE_INDEX="reference_genome.mmi"
+GENOMES=("genomes/OR062524_1.fasta" "genomes/OR062525_1.fasta" "genomes/OR062526_1.fasta" "genomes/OR062527_1.fasta" "genomes/OR062528_1.fasta" "genomes/OR062529_1.fasta" "genomes/OR062530_1.fasta")
 
-# Perform pairwise alignments with minimap2
-for ref in $genome_dir/*.fasta; do
-  for query in $genome_dir/*.fasta; do
-    if [[ "$ref" < "$query" ]]; then
-      ref_base=$(basename "$ref" .fasta)
-      query_base=$(basename "$query" .fasta)
+# Index reference
+minimap2 -d "$REFERENCE_INDEX" "$REFERENCE_GENOME"
 
-      # Run minimap2 only for unique pairs (A vs B, not B vs A)
-      minimap2 -x asm20 -a "$ref" "$query" > "$output_dir/${ref_base}_vs_${query_base}.paf"
-    fi
-  done
+# Align genomes to reference
+for PHAGE_GENOME in "${GENOMES[@]}"; do
+    BASENAME=$(basename "$PHAGE_GENOME" .fasta)
+    OUTPUT_FILE="comparisons/${BASENAME}_vs_reference.paf"
+    minimap2 "$REFERENCE_INDEX" "$PHAGE_GENOME" > "$OUTPUT_FILE"
 done
