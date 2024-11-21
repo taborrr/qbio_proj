@@ -7,7 +7,7 @@
 This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize phage genome alignments using **MiniMap2** and **ggplot2**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages, in order to redetermine which genera these 7 new phages belong.  
 
 ## Why?
-Bacteria are the most abundant living organisms on Earth, with an estimated **10^30** cells, but viruses outnumber them, making them the most abundant biological entities at **10^31**. Viruses have the smallest genomes in the biological world at just 2,000-5,000 bp, about 0.1% the size of a bacterial genome, yet they can lethally infect every organism on Earth, including latops. Studying new phage alignments reveals their rapid evolution and helps pinpoint relatedness, guiding more effective interventions against bacterial infections.
+Bacteria are the most abundant living organisms on Earth, with an estimated **10^30** cells, but viruses outnumber them, being the most abundant biological entities at **10^31**. Viruses have the smallest genomes in the biological world with bottoming out at 2,500 bp, about half a percent (0.4%) the size of the smallest bacterial genome (*Mycoplasma genitalum* 580,000 bp), yet they can lethally infect every organism on Earth, including latops. Studying newly emerged phage genomes through alignments reveals their rapid evolution and helps pinpoint relatedness, guiding more effective interventions against bacterial infections.
 
 ```bash
  Viruses
@@ -32,45 +32,33 @@ Bacteria are the most abundant living organisms on Earth, with an estimated **10
                                  |
                                 Genera
 ```
-
-
-
+--- 
 ## Reference Phage Genomes
-We will use three phage reference genomes as genera represenatives for alignment:
+We will use three phage reference genomes as 3 different genera represenatives for alignment:
 
-1. **Escherichia phage vB_EcoM Hdk5** (Accession no: MK373780.1)  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/MK373780.1?report=fasta)
-   
-2. **Escherichia phage vB_EcoM_Schickermooser** (Accession no: NC_048196.1)  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/NC_048196.1?report=fasta)
+1. [**Escherichia phage vB_EcoM Hdk5** (Accession no: MK373780.1)](https://www.ncbi.nlm.nih.gov/nuccore/MK373780.1?report=fasta)
 
-3. **Escherichia phage vB_EcoM UFV10** (Accession no: OP555981.1)  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OP555981.1?report=fasta)
+2. [**Escherichia phage vB_EcoM_Schickermooser** (Accession no: NC_048196.1)](https://www.ncbi.nlm.nih.gov/nuccore/NC_048196.1?report=fasta)  
 
-## Phage Genomes for Alignment
+3. [**Escherichia phage vB_EcoM_UFV10** (Accession no: OP555981.1)](https://www.ncbi.nlm.nih.gov/nuccore/OP555981.1?report=fasta)  
+
+## 7 New Phage Genomes for Alignment
 We will align seven new phage genomes to each representative genera reference genome:
 
-1. **Escherichia phage vB_EcoM_3A1_SA_NWU**, complete genome  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062524.1?report=fasta)
-   
-2. **Escherichia phage vB_EcoM_10C2_SA_NWU**, complete genome  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062525.1?report=fasta)
+1. [**Escherichia phage vB_EcoM_3A1_SA_NWU** (Accession no: OR062524.1)](https://www.ncbi.nlm.nih.gov/nuccore/OR062524.1?report=fasta)  
 
-3. **Escherichia phage vB_EcoM_10C3_SA_NWU**, complete genome  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062526.1?report=fasta)
+2. [**Escherichia phage vB_EcoM_10C2_SA_NWU** (Accession no: OR062525.1)](https://www.ncbi.nlm.nih.gov/nuccore/OR062525.1?report=fasta)  
 
-4. **Escherichia phage vB_EcoM_11B_SA_NWU**, complete genome  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062527.1?report=fasta)
+3. [**Escherichia phage vB_EcoM_10C3_SA_NWU** (Accession no: OR062526.1)](https://www.ncbi.nlm.nih.gov/nuccore/OR062526.1?report=fasta)  
 
-5. **Escherichia phage vB_EcoM_12A_SA_NWU**, complete genome  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062528.1?report=fasta)
+4. [**Escherichia phage vB_EcoM_11B_SA_NWU** (Accession no: OR062527.1)](https://www.ncbi.nlm.nih.gov/nuccore/OR062527.1?report=fasta)  
 
-6. **Escherichia phage vB_EcoM_118_SA_NWU**, complete genome  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062529.1?report=fasta)
+5. [**Escherichia phage vB_EcoM_12A_SA_NWU** (Accession no: OR062528.1)](https://www.ncbi.nlm.nih.gov/nuccore/OR062528.1?report=fasta)  
 
-7. **Escherichia phage vB_EcoM_366V_SA_NWU**, complete genome  
-   [FASTA Link](https://www.ncbi.nlm.nih.gov/nuccore/OR062530.1?report=fasta)
+6. [**Escherichia phage vB_EcoM_118_SA_NWU** (Accession no: OR062529.1)](https://www.ncbi.nlm.nih.gov/nuccore/OR062529.1?report=fasta)  
 
+7. [**Escherichia phage vB_EcoM_366V_SA_NWU** (Accession no: OR062530.1)](https://www.ncbi.nlm.nih.gov/nuccore/OR062530.1?report=fasta)  
+--- 
 ## Tools and Software
 We will use the following tools for genome alignments and visualizations:
 - **[MiniMap2](https://github.com/lh3/minimap2)**: A fast genome alignment tool.
