@@ -105,8 +105,8 @@ We will use the following tools for genome alignments and visualizations:
 3. **Perform genome alignments for one reference to the seven new phages**:
    ```bash
    cd scripts
-   chmod +x minimapper.sh
-   ./minimapper.sh
+   chmod +x minimap2_alignment.sh
+   ./minimap2_alignment.sh
    ```
 
 4. **Visualize the alignments in RStudio**
@@ -114,4 +114,4 @@ We will use the following tools for genome alignments and visualizations:
 - Run each line
 
 ## Next Steps
-5. Consider potential to use Plotly-Dash
+5. Consider potential to use Plotly-Dash, seglogos, heatmap
