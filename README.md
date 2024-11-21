@@ -6,6 +6,9 @@
 ## Project Overview
 This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize phage genome alignments using **MiniMap2** and **ggplot2**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages, in order to redetermine which genera these 7 new phages belong.  
 
+## Why?
+Bacteria are the most abundant living organisms on Earth, with an estimated **10^30** cells, but viruses outnumber them, making them the most abundant biological entities at **10^31**. Viruses have the smallest genomes in the biological world at just 2,000-5,000 bp, about 0.1% the size of a bacterial genome, yet they can lethally infect every organism on Earth, including latops. Studying new phage alignments reveals their rapid evolution and helps pinpoint relatedness, guiding more effective interventions against bacterial infections.
+
 ```bash
  Viruses
 └── Duplodnaviria
