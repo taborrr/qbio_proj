@@ -2,19 +2,10 @@
 # for the virus-wgs-comparison project
 
 # library
-#install.packages("gggenomes") # For genome visualization
-#install.packages("pafr")     # For parsing PAF files
-#install.packages("ggpubr")
 library(ggplot2)
 library(dplyr)
 library(pafr)
 
-
-
-
-# "seq_id"      "length"      "start"       "end"         "strand"      "seq_id2"    
-# "length2"     "start2"      "end2"        "map_match"   "map_length"  "map_quality"
-# "tp"          "cm"          "s1"          "s2"          "dv"          "rl" 
 
 setwd("~/virus-wgs-comparison")
 getwd()
