@@ -21,7 +21,7 @@ dir()
 
 
 
-# Task 1: Read in 7 PAF files
+# Read in 7 PAF files into labeled data frames
 paf1 <- read.table("comparisons/OR062524_1_vs_MK.paf")
 paf1 <- read.table("comparisons/OR062524_1_vs_MK.paf")
 paf2 <- read.table("comparisons/OR062525_1_vs_MK.paf")
@@ -32,7 +32,6 @@ paf5 <- read.table("comparisons/OR062528_1_vs_MK.paf")
 paf6 <- read.table("comparisons/OR062529_1_vs_MK.paf")
 paf7 <- read.table("comparisons/OR062530_1_vs_MK.paf")
 paf_list <- list(paf1, paf2, paf3, paf4, paf5, paf6, paf7)
-
 for (i in seq_along(paf_list)) {
   colnames(paf_list[[i]]) <- c(
     "seq_id", "length", "start", "end", "strand", "seq_id2",
@@ -40,16 +39,13 @@ for (i in seq_along(paf_list)) {
     "map_quality", "tp", "cm", "s1", "s2", "dv", "rl")
 }
 
-
-
-
-# Task 2: Extract lengths and genome names
+# Extract lengths and genome names
 query_lengths <- sapply(paf_list, function(paf) paf$length[1])  # Query genome lengths
 query_names <- sapply(paf_list, function(paf) paf$seq_id[1])   # Query genome names
 reference_length <- paf1$length2[1]                           # Reference genome length
 reference_name <- paf1$seq_id2[1]                             # Reference genome name
 
-# Task 3: Prepare alignment data
+# Make more streamlined df
 alignments <- lapply(paf_list, function(paf) {
   data.frame(
     query_name = paf$seq_id,
@@ -64,7 +60,7 @@ alignments <- lapply(paf_list, function(paf) {
 y_positions <- seq(1, by = 2, length.out = 7)
 
 # Create plotting data for rectangles
-# Query FULL genome rectangles
+# Full length rectangles of the query genomes
 query_rectangles <- data.frame(
   name = query_names,
   start = 0,
@@ -72,7 +68,7 @@ query_rectangles <- data.frame(
   y = y_positions
 )
 
-# collecting all alignment-blocks for rectangles from each PAF
+# Alignment-block rectangle lengths for each alignment in each paf
 align_rects <- do.call(rbind, lapply(seq_along(alignments), function(i) {
   data.frame(
     query_name = alignments[[i]]$query_name,
@@ -98,16 +94,9 @@ ref_intervals <- data.frame(
 ref_intervals$y <- 15
 ref_intervals$end[nrow(ref_intervals)] <- reference_length
 
-
-
-
-
-
-#############################################################
-
 #############################################################
 #############################################################
-# Function to split a row into multiple rows based on the 10000 boundary
+# Function to split a row into multiple rows based on the 10000 boundary in the reference frame
 split_intervals <- function(query_name, start, end, y_val, r_start, r_end) {
   intervals <- data.frame()
   print(paste("Processing:", query_name, start, end, y_val, r_start, r_end))
@@ -116,7 +105,7 @@ split_intervals <- function(query_name, start, end, y_val, r_start, r_end) {
     next_boundary <- ceiling(r_start / 10000) * 10000
     print(paste("Current r_start:", r_start, "Next boundary:", next_boundary, "r_End:", r_end))
     if (next_boundary == r_start) {
-      next_boundary <- ceiling((r_start+0.1) / 10000) * 10000
+      next_boundary <- ceiling((r_start+0.0001) / 10000) * 10000
     }
     if (next_boundary >= r_end) {
       next_boundary <- r_end
@@ -131,9 +120,9 @@ split_intervals <- function(query_name, start, end, y_val, r_start, r_end) {
       r_end = next_boundary
     )
     intervals <- rbind(intervals, new_row)
-    # Update start for the next interval
-    r_start <- next_boundary + 0.1
-    start <- new_row$end + 0.1
+    # Update starts for the next interval
+    r_start <- next_boundary + 0.0001
+    start <- new_row$end + 0.0001
   }
   return(intervals)
 }
@@ -165,10 +154,9 @@ for (i in 1:nrow(align_rects_v1)) {
   split_rows <- split_intervals(row$query_name, row$start, row$end, row$y, row$r_start, row$r_end)
   new_align_rects <- rbind(new_align_rects, split_rows)
 }
-
 ##################################################################
 ##################################################################
-
+# Now running the real data frame
 new_align_rects <- data.frame()
 for (i in 1:nrow(align_rects)) {
   print(paste("Processing row", i))
@@ -176,9 +164,9 @@ for (i in 1:nrow(align_rects)) {
   split_rows <- split_intervals(row$query_name, row$start, row$end, row$y, row$r_start, row$r_end)
   new_align_rects <- rbind(new_align_rects, split_rows)
 }
-
 ##################################################################
 ##################################################################
+# add color to query segments based on reference interval overlap
 new_align_rects$color <- 0
 for (i in 1:nrow(new_align_rects)) {
   arow <- new_align_rects[i, ]
@@ -194,15 +182,20 @@ for (i in 1:nrow(new_align_rects)) {
     }
   }
 }
-
 ##################################################################
 ##################################################################
+# PLOTTING
 
+# include reference and genera label into a df
+ref_genera <- data.frame(
+    name = "Genus: Phapecoctavirus",
+    start = 0,
+    end = 0,
+    y = 15)
+query_rectangles <- rbind(query_rectangles, ref_genera)
 
-
-
-# Updated plotting with informative colors
-ggplot() +
+# Plotting the alignments 
+plotme <- ggplot() +
   # Plot genome rectangles
   geom_rect(
     data = query_rectangles,
@@ -219,7 +212,7 @@ ggplot() +
   # Plot 10kb intervals on the reference genome
   geom_rect(
     data = ref_intervals,
-    aes(xmin = start, xmax = end, ymin = y - 0.3, ymax = y + 0.3, fill = color),
+    aes(xmin = start, xmax = end, ymin = y - 0.4, ymax = y + 0.4, fill = color),
     color = NA
   ) +
   scale_fill_identity() +  # Use colors directly
@@ -227,13 +220,14 @@ ggplot() +
   geom_text(
     data = query_rectangles,
     aes(x = start, y = y, label = name),
-    hjust = -1,
-    vjust = -2,
+    hjust = -0.1,
+    vjust = -1.5,
     size = 3.5
   ) +
+  scale_x_continuous(breaks = c(0, 50000, 100000, 150000), labels = c("0", "50,000", "100,000", "150,000")) + #wdyThink?
   scale_y_continuous(breaks = NULL) +
   labs(
-    x = "Genomic Positions (bp)",
+    x = "genomic position (bp)",
     y = NULL
   ) +
   theme_minimal() +
@@ -242,7 +236,9 @@ ggplot() +
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank()
   )
-##################################################################
-##################################################################
-##################################################################
-##################################################################
+
+plotme
+
+# Saving plots
+ggsave("plots/phapecoctavirus.jpg", plot = plotme, device = "jpeg", width = 7, height = 4.5, dpi = 300)
+
