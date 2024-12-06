@@ -83,9 +83,9 @@ We will use the following tools for genome alignments and visualizations:
 
 2. **Download MiniMap2**:
    ```bash
-      curl -L https://github.com/lh3/minimap2/releases/download/v2.28/minimap2-2.28_x64-linux.tar.bz2 | tar -jxvf -
+   curl -L https://github.com/lh3/minimap2/releases/download/v2.28/minimap2-2.28_x64-linux.tar.bz2 | tar -jxvf -
    ```
-[This is the manual for MiniMap2](https://lh3.github.io/minimap2/minimap2.html)
+   [This is the manual for MiniMap2](https://lh3.github.io/minimap2/minimap2.html)
 
 3. **Perform genome alignments for one reference to the seven new phages**:
    ```bash
@@ -95,8 +95,8 @@ We will use the following tools for genome alignments and visualizations:
    ```
 
 4. **Visualize the alignments in RStudio**
-- Open `plot_mk.R` in RStudio
-- Run each line
+   - Open `plot_mk.R` in RStudio
+   - Run each line
 
 ## Next Steps
-5. Consider potential to use Plotly-Dash, seglogos, heatmap
+5. Consider Plotly-Dash, seglogos, heatmap for further interaction with the plots
