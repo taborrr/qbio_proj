@@ -1,4 +1,4 @@
-# Recreation of *Escherichia coli* O177-infecting Phage Genome Alignments Figure
+# Figure Recreation of *Escherichia coli*-infecting Phage Genome Alignments
 #### Authors: Izabella and Tabor
 
 ![Genome Alignments Figure](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-023-48788-w/MediaObjects/41598_2023_48788_Fig5_HTML.png?as=webp)
@@ -81,24 +81,21 @@ We will use the following tools for genome alignments and visualizations:
    cd virus-wgs-comparison
    ```
 
-2. **Create MiniMap2 conda environment**:
+2. **Download MiniMap2**:
    ```bash
-      conda create -n wgs_align -y
-      conda activate wgs_align
-      conda config --env --add channels bioconda
-      conda install -y bioconda::minimap2
+      curl -L https://github.com/lh3/minimap2/releases/download/v2.28/minimap2-2.28_x64-linux.tar.bz2 | tar -jxvf -
    ```
 [This is the manual for MiniMap2](https://lh3.github.io/minimap2/minimap2.html)
 
 3. **Perform genome alignments for one reference to the seven new phages**:
    ```bash
    cd scripts
-   chmod +x minimap2_alignment.sh
-   ./minimap2_alignment.sh
+   chmod +x aligner.sh
+   ./aligner.sh
    ```
 
 4. **Visualize the alignments in RStudio**
-- Open `plot.R` in RStudio
+- Open `plot_mk.R` in RStudio
 - Run each line
 
 ## Next Steps
