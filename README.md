@@ -131,4 +131,4 @@ The enhanced alignment visualization approach provided clear and visually appeal
    The **Vequintavirus** genus is closely related to:  
    - *Escherichia phage vB_EcoM_11B_SA_NWU* (Accession no: OR062527.1)  
 
-   These results suggest the 7 phage species probably diverged from MRCAs within these respective genus. We hope this project deomstrated the pleasure of innovating genomics-based taxonomic classification and offered another fascinating glimpse at the rapidly evolving genomes of viruses.
+   These results suggest the 7 phage species probably diverged from MRCAs within these respective genus. We hope this project demonstrated the pleasure of innovating genomics-based taxonomic classification and offered another fascinating glimpse at the rapidly evolving genomes of viruses.
