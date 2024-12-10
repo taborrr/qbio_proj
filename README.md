@@ -114,11 +114,11 @@ We will use the following tools for genome alignments and visualizations:
    - Open `plot_mk.R` in RStudio
    - Run each line
 
-## Next Steps
-5. Consider Plotly-Dash, seglogos, heatmap for further interaction with the plots
+5. **Next Steps** Consider Plotly-Dash, seglogos, heatmap for further interaction with the plots
+
 
 ## Conclusions 
-6. The enhanced alignment visualizations provide clear evidence for phage species placement at the genera-level taoxn. Our plots show that the **Phapecoctavirus** genus is closely related to:  
+The enhanced alignment visualization approach provided clear and visually appealing evidence for phage species placement within the taxon of genera. Our plots show that the **Phapecoctavirus** genus is closely related to:  
    - *Escherichia phage vB_EcoM_10C2_SA_NWU* (Accession no: OR062525.1)  
    - *Escherichia phage vB_EcoM_12A_SA_NWU* (Accession no: OR062528.1)  
    - *Escherichia phage vB_EcoM_366V_SA_NWU* (Accession no: OR062530.1)  
@@ -131,4 +131,4 @@ We will use the following tools for genome alignments and visualizations:
    The **Vequintavirus** genus is closely related to:  
    - *Escherichia phage vB_EcoM_11B_SA_NWU* (Accession no: OR062527.1)  
 
-   These results suggest the 7 phage species probably diverged from MRCAs within these respective genus. The refined visualization approach significantly improves the efficiency and pleasure of taxonomic classification at the genus level.
+   These results suggest the 7 phage species probably diverged from MRCAs within these respective genus. We hope this project deomstrated the pleasure of innovating genomics-based taxonomic classification and offered another fascinating glimpse at the rapidly evolving genomes of viruses.
