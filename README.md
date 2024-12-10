@@ -1,7 +1,23 @@
 # Figure Recreation of *Escherichia coli*-infecting Phage Genome Alignments
 #### Authors: Izabella and Tabor
 
-![Genome Alignments Figure](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-023-48788-w/MediaObjects/41598_2023_48788_Fig5_HTML.png?as=webp)
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <strong>Before</strong><br>
+        <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-023-48788-w/MediaObjects/41598_2023_48788_Fig5_HTML.png?as=webp" alt="Genome Alignments Figure" width="400"/>
+      </td>
+      <td align="center" width="50">
+        <strong>→</strong>
+      </td>
+      <td align="center">
+        <strong>After</strong><br>
+        <img src="https://github.com/taborrr/virus-wgs-comparison/blob/main/plots/phapecoctavirus.jpg?raw=true" alt="Phapecoctavirus Alignment" width="400"/>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## Project Overview
 This project aims to reanalyze genome alignment data from figure 5 of the 2023 paper, ["Comparative genomics and proteomics analysis of phages infecting multi-drug resistant *Escherichia coli* O177 isolated from cattle faeces"](https://doi.org/10.1038/s41598-023-48788-w). Our objective is to recreate and modernize phage genome alignments using **MiniMap2** and **ggplot2**, gaining practical experience with genome alignment, visualization techniques, and specialized plotting packages, in order to redetermine which genera these 7 new phages belong.  
